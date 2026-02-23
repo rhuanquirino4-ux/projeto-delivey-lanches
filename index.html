@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Family Burguer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header" id="Início">
+        <div class="header-content">
+            <img src="logo-family-buirguers.png" alt="Logo" class="logo">
+            
+            <nav class="nav-menu">
+                <a href="#Início">Início</a>
+                <a href="#Cardápio">Cardápio</a>
+                <a href="https://wa.me/5535998049656" target="_blank">Contato</a>
+            </nav>
+
+            <button class="carrinho" id="open-cart">
+                <span class="cart-text">Carrinho</span>
+                <div class="contador-container">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart-count">0</span>
+                </div>
+            </button>
+        </div>
+    </header>
+
+    <main class="cardapio" id="Cardápio">
+        <h1>Nosso cardápio</h1>
+        <div class="cardapio-grid">
+            <div class="cardapio-item">
+                <img src="hamburguer-classico.png" alt="Hambúrguer Clássico">
+                <div class="info-produto">
+                    <h2>Hambúrguer Clássico</h2>
+                    <p>Delicioso hambúrguer com carne suculenta, queijo derretido, alface fresca, tomate e molho especial.</p>
+                </div>
+                <span class="preco">R$ 19,90</span>
+                <button class="add-to-cart">Adicionar ao carrinho</button>
+            </div>
+
+            <div class="cardapio-item">
+                <img src="hamburguer-classico.png" alt="Cheddar Bacon">
+                <div class="info-produto">
+                    <h2>Cheddar Bacon</h2>
+                    <p>Muito cheddar cremoso com fatias crocantes de bacon e nossa maionese da casa.</p>
+                </div>
+                <span class="preco">R$ 24,90</span>
+                <button class="add-to-cart">Adicionar ao carrinho</button>
+            </div>
+
+            <div class="cardapio-item">
+                <img src="hamburguer-classico.png" alt="Duplo Smash">
+                <div class="info-produto">
+                    <h2>Duplo Smash</h2>
+                    <p>Duas carnes smash de 100g, cebola caramelizada e dobro de queijo derretido no ponto certo.</p>
+                </div>
+                <span class="preco">R$ 29,90</span>
+                <button class="add-to-cart">Adicionar ao carrinho</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <i class="fa-solid fa-bag-shopping" style="font-size: 2rem; color: #ffe437; margin-bottom: 10px;"></i>
+            <h2>Finalizar Pedido</h2>
+            
+            <form id="order-form">
+                <div class="input-group">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="nome" placeholder="Seu Nome Completo" required>
+                </div>
+
+                <div class="input-group">
+                    <i class="fa-solid fa-phone"></i>
+                    <input type="tel" id="telefone" placeholder="Seu Telefone" required>
+                </div>
+
+                <div class="input-group">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="text" id="endereco" placeholder="Endereço de Entrega" required>
+                </div>
+
+                <div class="input-group">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <select id="pagamento" required>
+                        <option value="" disabled selected>Forma de Pagamento</option>
+                        <option value="pix">PIX</option>
+                        <option value="cartao">Cartão</option>
+                        <option value="dinheiro">Dinheiro</option>
+                    </select>
+                </div>
+
+                <div id="troco-container" style="display: none;" class="input-group">
+                    <i class="fa-solid fa-comments-dollar"></i>
+                    <input type="number" id="troco" placeholder="Troco para quanto?">
+                </div>
+
+                <button type="submit" class="btn-finalizar">CONCLUIR PEDIDO</button>
+            </form>
+
+            <div id="success-message" style="display: none;">
+                <p style="color: #25d366; font-weight: bold; margin-top: 20px;">✅ O seu pedido está sendo preparado!</p>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/5535998049656" class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <footer class="rodape" id="Contato">
+        <p>&copy; 2026 Family Burguer's. Todos os direitos reservados.</p>
+        <div class="contatos-rodape">
+            <span><i class="fa-solid fa-phone"></i> (35) 99804-9656</span>
+            <span><i class="fa-solid fa-envelope"></i> familyburguers@gmail.com</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

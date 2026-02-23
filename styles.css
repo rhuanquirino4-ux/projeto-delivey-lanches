@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    padding-top: 100px;
+    background-color: black;
+    color: white;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    z-index: 1000;
+    border-bottom: 2px solid #ffe437;
+    padding: 10px 0;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.logo { height: 50px; }
+
+.nav-menu {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #ffe437;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.carrinho {
+    background-color: #ffe437;
+    color: #000;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    outline: none;
+    min-width: 120px;
+}
+
+.carrinho i {
+    color: #000 !important;
+}
+
+.contador-container { 
+    position: relative; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cart-count {
+    background-color: #ff3737;
+    color: white;
+    font-size: 0.7rem;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    position: absolute;
+    top: -12px;
+    right: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ffe437;
+}
+
+.cardapio { padding: 30px 15px; max-width: 1200px; margin: 0 auto; }
+
+.cardapio h1 { color: #ffe437; text-align: center; margin-bottom: 30px; font-size: 1.8rem; }
+
+.cardapio-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px; 
+}
+
+.cardapio-item {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cardapio-item img { width: 100%; max-width: 200px; border-radius: 10px; margin-bottom: 15px; }
+
+.info-produto h2 { font-size: 1.3rem; margin-bottom: 8px; }
+
+.info-produto p { color: #aaa; font-size: 0.85rem; margin-bottom: 15px; }
+
+.preco { color: #ffe437; font-weight: bold; font-size: 1.4rem; margin-bottom: 15px; display: block; }
+
+.add-to-cart {
+    background-color: #ffe437;
+    color: #000;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+}
+
+.add-to-cart i {
+    color: #000 !important;
+}
+
+.whatsapp-float {
+    position: fixed; bottom: 20px; right: 20px;
+    background-color: #25d366; width: 55px; height: 55px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    z-index: 1001; color: white; font-size: 28px; text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal[style*="display: block"] {
+    display: flex !important;
+}
+
+.modal-content {
+    background-color: #111;
+    padding: 30px 20px;
+    border: 2px solid #ffe437;
+    width: 90%;
+    max-width: 380px;
+    border-radius: 20px;
+    position: relative;
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-bottom: 25px;
+    color: #ffe437;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: #aaa;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.input-group i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffe437;
+    font-size: 1.1rem;
+    pointer-events: none;
+}
+
+.input-group input, 
+.input-group select {
+    width: 100%;
+    padding: 14px 12px 14px 45px;
+    background: #222;
+    border: 1px solid #333;
+    color: white;
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+.btn-finalizar {
+    background-color: #ffe437;
+    color: #000;
+    width: 100%;
+    padding: 16px;
+    font-weight: 800;
+    font-size: 1rem;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.rodape {
+    background-color: black;
+    padding: 30px 15px;
+    color: #ffe437;
+    text-align: center;
+    border-top: 1px solid #ffe437;
+}
+
+@media (max-width: 480px) {
+    body { padding-top: 140px; }
+    .header-content { 
+        flex-direction: column; 
+        align-items: center; 
+        gap: 15px;
+    }
+    .nav-menu { margin: 5px 0; gap: 20px; }
+    .carrinho { 
+        width: 90%; 
+        max-width: 300px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+    }
+}
+
+@media (max-width: 350px) {
+    .modal-content { padding: 20px 15px; }
+    .input-group input, .input-group select { padding: 12px 10px 12px 40px; font-size: 0.9rem; }
+}
